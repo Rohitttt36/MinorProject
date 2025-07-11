@@ -2,3 +2,21 @@
     margin: 0px;
     padding: 0px;
 }
+.nav-bar{
+    height: auto;
+    width: 100vw;
+    background-color: black;
+    color: white;
+}
+.nav-lists{
+    width: 100px;
+    display: flex;
+    list-style-type: none;
+    /* justify-content: right; */
+}
+.nav-lists ul{
+    text-decoration: none;
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+}

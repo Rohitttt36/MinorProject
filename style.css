@@ -9,10 +9,10 @@
     color: white;
 }
 .nav-lists{
-    width: 100px;
+    width: 200px;
     display: flex;
+    align-items: end;
     list-style-type: none;
-    /* justify-content: right; */
 }
 .nav-lists ul{
     text-decoration: none;

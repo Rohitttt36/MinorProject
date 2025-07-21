@@ -70,4 +70,12 @@ document.addEventListener('DOMContentLoaded', function () {
       behavior: 'smooth'
     });
   });
+
+  // Hamburger menu toggle
+  const menu = document.querySelector('.menu');
+  const navLinks = document.getElementById('nav-links');
+
+  menu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
 });

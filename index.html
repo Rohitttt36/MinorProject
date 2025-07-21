@@ -1,29 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" >
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sweet Delight Bakery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="nav-bar">
-        <div class="nav-lists">
-           <ul>
-             <li><a href="About.html">About</a></li>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="services.html">Services</a></li>
-           </ul>
-        </div>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Sweet Delight Bakery</h1>
+      
+      <nav>
+        
+        <ul class="nav__links" id="nav-links">
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="products.html" target="_blank">Products</a></li>
+          <li><a href="gallery.html" target="_blank">Gallery</a></li>
+          <li><a href="careers.html" target="_blank">Careers</a></li>
+          <li><a href="contact.html" target="_blank">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <section>
-        <div class="home">
-            This is the home page where you'll will get the experience of the best music player
-        </div>
-        <footer>
-            <div class="footer"></div>
-        </footer>
-    </section>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Sweet Delight Bakery</h1>
+      <p>Delicious breads, cakes, and pastries made with love.</p>
+      <a href="#products" class="btn">Explore Our Products</a>
+    </div>
+  </section>
+
+  <section id="about" class="about section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>At Sweet Delight Bakery, we believe in baking with passion and quality ingredients. Our bakery offers a wide variety of fresh breads, cakes, and pastries to satisfy your sweet tooth and savory cravings.</p>
+    </div>
+  </section>
+
+  <section id="products" class="products section">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="product-list">
+        <article class="product">
+          <img src="assets/bread.jpg" alt="Fresh Bread" />
+          <h3>Fresh Bread</h3>
+          <p>Soft and crusty breads baked daily.</p>
+        </article>
+        <article class="product">
+          <img src="assets/cake.jpg" alt="Delicious Cakes" />
+          <h3>Delicious Cakes</h3>
+          <p>Custom cakes for every occasion.</p>
+        </article>
+        <article class="product">
+          <img src="assets/pastry.jpg" alt="Tasty Pastries" />
+          <h3>Tasty Pastries</h3>
+          <p>Flaky and buttery pastries made fresh.</p>
+        </article>
+        <article class="product">
+          <img src="assets/cookies.jpg" alt="Homemade Cookies" />
+          <h3>Homemade Cookies</h3>
+          <p>Crunchy and sweet cookies baked fresh daily.</p>
+        </article>
+        <article class="product">
+          <img src="assets/muffins.jpg" alt="Delicious Muffins" />
+          <h3>Delicious Muffins</h3>
+          <p>Soft and moist muffins with various flavors.</p>
+        </article>
+        <article class="product">
+          <img src="assets/cupcake.jpg" alt="Colorful Cupcakes" />
+          <h3>Colorful Cupcakes</h3>
+          <p>Beautifully decorated cupcakes for any celebration.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-list">
+        <article class="service">
+          <h3>Custom Orders</h3>
+          <p>Personalized cakes and baked goods tailored to your special occasions.</p>
+        </article>
+        <article class="service">
+          <h3>Catering</h3>
+          <p>Delicious bakery items for events, parties, and corporate gatherings.</p>
+        </article>
+        <article class="service">
+          <h3>Delivery</h3>
+          <p>Convenient delivery service to bring fresh baked goods right to your door.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2024 Sweet Delight Bakery. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+  <button id="backToTop" title="Back to top">↑</button>
 </body>
 </html>

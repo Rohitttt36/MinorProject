@@ -27,11 +27,23 @@ document.addEventListener('DOMContentLoaded', function () {
     return re.test(email);
   }
 
-  // Theme toggle button
-  const themeToggle = document.getElementById('themeToggle');
-  if (themeToggle) {
-    themeToggle.remove();
-  }
+
+
+// dark mode function 
+
+
+let btn = document.getElementById("btn");
+btn.addEventListener("click", ()=>{
+
+  document.body.classList.toggle("dark-mode");
+})
+
+
+
+
+
+
+
 
   // Back to Top button
   const backToTopButton = document.getElementById('backToTop');

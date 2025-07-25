@@ -27,6 +27,118 @@ document.addEventListener('DOMContentLoaded', function () {
     return re.test(email);
   }
 
+  // Login form handling
+  const loginLink = document.getElementById('login-link');
+  const loginModal = document.getElementById('login-modal');
+  const loginForm = document.getElementById('login-form');
+  const loginCancel = document.getElementById('login-cancel');
+  const loginMessage = document.getElementById('login-message');
+  const registerForm = document.getElementById('register-form');
+  const registerCancel = document.getElementById('register-cancel');
+  const showRegisterLink = document.getElementById('show-register');
+  const showLoginLink = document.getElementById('show-login');
+  const modalTitle = document.getElementById('modal-title');
+
+  // Helper function to get users from localStorage
+  function getUsers() {
+    const users = localStorage.getItem('users');
+    return users ? JSON.parse(users) : {};
+  }
+
+  // Helper function to save users to localStorage
+  function saveUsers(users) {
+    localStorage.setItem('users', JSON.stringify(users));
+  }
+
+  loginLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    loginModal.style.display = 'block';
+    loginMessage.style.display = 'none';
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
+    modalTitle.textContent = 'Login';
+  });
+
+  loginCancel.addEventListener('click', function () {
+    loginModal.style.display = 'none';
+  });
+
+  registerCancel.addEventListener('click', function () {
+    loginModal.style.display = 'none';
+  });
+
+  showRegisterLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'block';
+    modalTitle.textContent = 'Register';
+  });
+
+  showLoginLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    registerForm.style.display = 'none';
+    loginForm.style.display = 'block';
+    modalTitle.textContent = 'Login';
+  });
+
+  loginForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const username = loginForm.username.value.trim();
+    const password = loginForm.password.value.trim();
+
+    if (!username || !password) {
+      alert('Please enter both username and password.');
+      return;
+    }
+
+    const users = getUsers();
+
+    if (users[username] && users[username] === password) {
+      loginModal.style.display = 'none';
+      alert('Thank you for signing in, ' + username + '!');
+      loginMessage.style.display = 'none';
+      loginForm.reset();
+    } else {
+      alert('Invalid username or password.');
+    }
+  });
+
+  registerForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const username = registerForm['reg-username'].value.trim();
+    const password = registerForm['reg-password'].value.trim();
+    const passwordConfirm = registerForm['reg-password-confirm'].value.trim();
+
+    if (!username || !password || !passwordConfirm) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    if (password !== passwordConfirm) {
+      alert('Passwords do not match.');
+      return;
+    }
+
+    const users = getUsers();
+
+    if (users[username]) {
+      alert('Username already exists. Please choose another.');
+      return;
+    }
+
+    users[username] = password;
+    saveUsers(users);
+
+    alert('Registration successful! You can now log in.');
+
+    registerForm.reset();
+    registerForm.style.display = 'none';
+    loginForm.style.display = 'block';
+    modalTitle.textContent = 'Login';
+  });
+
 
 
 // dark mode function 
@@ -37,13 +149,6 @@ btn.addEventListener("click", ()=>{
 
   document.body.classList.toggle("dark-mode");
 })
-
-
-
-
-
-
-
 
   // Back to Top button
   const backToTopButton = document.getElementById('backToTop');

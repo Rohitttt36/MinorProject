@@ -1,3 +1,4 @@
+
 /* General Reset and Base Styles */
 * {
   margin: 0;
@@ -98,7 +99,6 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  /* gap: 30px; */
   align-items: center;
   margin: 0;
   padding: 0;
@@ -361,7 +361,7 @@ nav ul li a:hover {
   color: #6b5843;
   font-size: 1rem;
 }
-
+  
 /* Footer */
 .footer {
   background-color: #d2691e;
@@ -371,6 +371,7 @@ nav ul li a:hover {
   font-size: 0.9rem;
   margin-top: 227px;
 }
+
 
 /* Login Modal Styles */
 .login-modal {
@@ -455,4 +456,42 @@ nav ul li a:hover {
 
 #login-form p a:hover {
   text-decoration: underline;
+}
+/* Back to Top Button Styles */
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1001;
+  background: #d2691e;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#backToTop:hover {
+  opacity: 1;
+  background: #b35a16;
+}
+/* Ensure the login/register prompt is always visible and styled */
+#login-form p, #register-form p {
+  display: block;
+  margin-top: 10px;
+  color: #333;
+  font-size: 1em;
+}
+#login-form a#show-register, #register-form a#show-login {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 5px;
 }
